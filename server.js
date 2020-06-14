@@ -9,6 +9,7 @@ dotenv.config({ path: `${__dirname}/.env` });
 // Enable middleware for logging in development mode
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
+// Match routes
 app.use('/users', require('./routes/users'));
 app.use('/games', require('./routes/games'));
 
