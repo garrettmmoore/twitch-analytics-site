@@ -1,15 +1,10 @@
-let validateCredentials = (client_id, client_secret, res) => {
-  if (!client_id) {
-    return res.status(401).json({
-      message: 'You must provide a Client ID.'
-    });
-  }
+const errors = require('../utils/errors');
+const { clientIDError, clientSecretError } = errors;
 
-  if (!client_secret) {
-    return res.status(401).json({
-      message: 'You must provide a Client Secret.'
-    });
-  }
+let validateCredentials = (client_id, client_secret, res) => {
+  if (!client_id) return clientIDError(res);
+
+  if (!client_secret) return clientSecretError(res);
 };
 
 module.exports = validateCredentials;
