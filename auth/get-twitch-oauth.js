@@ -1,6 +1,7 @@
 const qs = require('querystring');
 const nodeFetch = require('node-fetch');
-const config = require('./config');
+const config = require('../config');
+
 /**
  * Get Twitch Access Token
  * @param {string} client_id - Your Twitch client ID
@@ -8,8 +9,7 @@ const config = require('./config');
  * @param {string} grant_type - Grant must be 'client_credentials'
  * @param {string} scopes - Space-separated list to specify required app permissions
  */
-
-exports.getTwitchAccessToken = async ({
+const getTwitchAccessToken = async ({
   client_id,
   client_secret,
   grant_type,
@@ -24,7 +24,7 @@ exports.getTwitchAccessToken = async ({
     scopes
   });
 
-  // Make request to aquire an access token
+  // Make request to Twitch to aquire an access token
   const {
     access_token,
     refresh_token,
@@ -41,3 +41,5 @@ exports.getTwitchAccessToken = async ({
 
   return { access_token, refresh_token, expires_in, token_type, scope };
 };
+
+module.exports = getTwitchAccessToken;
