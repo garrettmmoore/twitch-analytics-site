@@ -9,40 +9,11 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "jest": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:node/recommended",
-    "plugin:jest/recommended",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": ["react", "react-hooks", "import", "jsx-a11y", "jest", "prettier"],
+  "extends": ["eslint:recommended", "plugin:node/recommended", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
-    "react/display-name": 0,
-    "react/prop-types": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/self-closing-comp": [
-      "error",
-      {
-        "component": false,
-        "html": false
-      }
-    ],
-    "react/jsx-closing-bracket-location": [1, "tag-aligned"],
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1,
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
     "node/no-unsupported-features/es-syntax": [
       "off",
       {
@@ -61,10 +32,5 @@
     "no-param-reassign": "off",
     "no-use-before-define": "off",
     "no-global-assign": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
   }
 }
