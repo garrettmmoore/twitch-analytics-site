@@ -1,10 +1,14 @@
 const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
-const app = express();
 const dotenv = require('dotenv');
 
 // Load environment variables
 dotenv.config({ path: `${__dirname}/.env` });
+
+const app = express();
+
+app.use(express.static(path.join(__dirname, 'build')));
 
 // Enable middleware for logging in development mode
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
@@ -12,6 +16,15 @@ if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 // Match routes
 app.use('/users', require('./routes/users'));
 app.use('/games', require('./routes/games'));
+
+// Handle production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static(__dirname + '/public/'));
+
+  // Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
 
 const port = process.env.PORT || 8000;
 
