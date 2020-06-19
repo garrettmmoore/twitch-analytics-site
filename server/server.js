@@ -20,13 +20,13 @@ app.use('/users', require('./routes/users'));
 app.use('/games', require('./routes/games'));
 
 // Handle production
-// if (process.env.NODE_ENV === 'production') {
-// Set static folder
-app.use(express.static(__dirname + '/public/'));
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static(__dirname + '/public/'));
 
-// Handle SPA
-app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
-// }
+  // Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
 
 const port = process.env.PORT || 8000;
 
