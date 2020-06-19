@@ -1,0 +1,16 @@
+.App {
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul.twitch-data-list {
+  float: right;
+  margin-right: 15rem;
+}
+
+form.twitch-form {
+  float: left;
+}
