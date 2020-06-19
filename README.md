@@ -11,13 +11,22 @@ Analyze Twitch streamer and game analytics
 
 ## Run locally
 
-1. Install Node Dependencies ->
-   `npm install`
+1. Navigate to the `server` directory and install Node Dependencies ->
 
-2. Copy the values from `.env.example` into a new `.env` file to set up your credentials.
+   ```bash
+   cd server
+   ```
 
-3. Start the server ->
-   `npm run start`
+   ```bash
+   npm install
+   ```
 
-4. Use Insomnia to send a request ->
+2. Copy the values from `.env.example` into a new `.env` file to set up your credentials
+
+3. Start the both the backend and frontend servers ->
+   `npm run dev`
+
+4. Fetch data from the API by sending a request using an API Client Tool ->
    `http://localhost:5000/users/login=<TWITCH_USER_LOGIN_HERE>`
+
+5. With both servers running, navigate to `http://localhost:3000` in your browser and enter in a Twitch username to fetch user data from the API
