@@ -2,10 +2,10 @@
   "name": "twitch-analytics-site",
   "version": "1.0.0",
   "description": "Analyze Twitch streamer and game analytics",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "server": " nodemon server",
+    "start": "functions-framework --target=app --port=5000",
+    "server": "functions-framework --target=app",
     "client": "npm run start --prefix \\.\\.\\/client\\",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -32,6 +32,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "@google-cloud/functions-framework": "^1.6.0",
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
