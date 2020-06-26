@@ -8,8 +8,9 @@ const fetchData = async (url, setData, setIsError, setIsLoading) => {
     const result = await axios(url);
 
     setData(result.data.data[0] || []);
-  } catch (error) {
+  } catch (err) {
     setIsError(true);
+    console.error(err);
   }
 
   setIsLoading(false);

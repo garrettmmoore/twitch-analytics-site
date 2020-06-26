@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 
 import useDropdown from '../hooks/useDropdown';
-import useSearch from '../hooks/useSearch';
 import Results from './Results';
 import fetchData from '../utils/fetchData';
 
 const Form = () => {
+  const [query, setQuery] = useState('');
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [query, SearchButton] = useSearch('');
   const options = ['login', 'extensions/id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
   const [data, setData] = useState([]);
@@ -17,21 +16,31 @@ const Form = () => {
     <>
       <form
         className="twitch-form"
-        onSubmit={event => {
+        onSubmit={e => {
           fetchData(
             `/users/${option}=${query}`,
             setData,
             setIsError,
             setIsLoading
           );
-          event.preventDefault();
+          e.preventDefault();
         }}
       >
         <Dropdown />
-        <SearchButton />
+        <label htmlFor="searchValue">
+          <input
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            onBlur={e => setQuery(e.target.value)}
+          />
+          <button type="submit" disabled={!query}>
+            Search
+          </button>
+        </label>
       </form>
-      {isError && <div>Something went wrong ...</div>}
-      {isLoading ? <div>Loading ...</div> : <Results data={data} />}
+      {isError && <>Something went wrong ...</>}
+      {isLoading ? <>Loading ...</> : <Results data={data} />}
     </>
   );
 };
