@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
-import Search from './components/Search';
+import Home from './pages/Home';
 
 const App = () => {
   return (
     <React.StrictMode>
-      <div>
-        <h1>Twitch Analytics</h1>
-        <Search />
-      </div>
+      <Home />
     </React.StrictMode>
   );
 };
