@@ -11,6 +11,7 @@ const Form = () => {
   const options = ['login', 'extensions/id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
   const [data, setData] = useState([]);
+  const URL = process.env.REACT_APP_URL || '';
 
   return (
     <>
@@ -18,7 +19,7 @@ const Form = () => {
         className="twitch-form"
         onSubmit={e => {
           fetchData(
-            `/users/${option}=${query}`,
+            `${URL}/users/${option}=${query}`,
             setData,
             setIsError,
             setIsLoading
