@@ -5,16 +5,16 @@ Analyze Twitch streamer and game analytics
 ## Requirements
 
 - Install Node.js (^12.0.0)
-- Create Twitch developer account - https://dev.twitch.tv/
-- Register a Twitch application - https://dev.twitch.tv/console/apps/create
+- Create Twitch developer account - <https://dev.twitch.tv/>
+- Register a Twitch application - <https://dev.twitch.tv/console/apps/create>
 - API Client Tool (Postman, Insomnia, etc.)
 
 ## Run locally
 
-1. Navigate to the `server` directory and install Node Dependencies ->
+1. Navigate to the `functions` directory and install Node Dependencies ->
 
    ```bash
-   cd server
+   cd functions
    ```
 
    ```bash
