@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, navigate } from 'react';
 
 import useDropdown from '../hooks/useDropdown';
-import Results from './Results';
 import fetchData from '../utils/fetchData';
+import Results from './Results';
 
-const Form = () => {
-  const [query, setQuery] = useState('');
+const Form = props => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const options = ['login', 'extensions/id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
+  const [query, setQuery] = useState('');
   const [data, setData] = useState([]);
   const URL = process.env.REACT_APP_URL || '';
 
@@ -18,16 +18,20 @@ const Form = () => {
       <form
         className="twitch-form"
         onSubmit={e => {
+          e.preventDefault();
           fetchData(
             `${URL}/users/${option}=${query}`,
             setData,
             setIsError,
             setIsLoading
           );
-          e.preventDefault();
+
+          // Access navigate from props - https://github.com/reach/router/issues/225
+          props.navigate(`${option}/${query}`);
         }}
       >
         <Dropdown />
+
         <label htmlFor="searchValue">
           <input
             type="text"
@@ -36,7 +40,7 @@ const Form = () => {
             onBlur={e => setQuery(e.target.value)}
           />
           <button type="submit" disabled={!query}>
-            Search
+            Submit
           </button>
         </label>
       </form>
