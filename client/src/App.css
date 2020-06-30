@@ -1,5 +1,27 @@
-.App {
-  text-align: left;
+.Home {
+  text-align: center;
+  color: rgb(100, 65, 165);
+  padding: 5px;
+}
+
+nav {
+  background-color: lightgrey;
+  padding: 5px;
+}
+
+select,
+input {
+  padding: 5px;
+  margin-right: 15px;
+}
+
+button {
+  padding: 5px;
+}
+
+a {
+  color: blueviolet;
+  margin-left: 5rem;
 }
 
 ul {
@@ -8,9 +30,11 @@ ul {
 
 ul.twitch-data-list {
   float: right;
-  margin-right: 15rem;
+  margin-right: 50rem;
+  text-align: left;
 }
 
 form.twitch-form {
   float: left;
+  margin-left: 31rem;
 }
