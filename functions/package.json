@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "functions-framework --target=app --port=5000",
-    "server": "functions-framework --target=app --port=5000",
+    "server": "nodemon --exec \"functions-framework --target=app --port=5000\"",
     "client": "npm run start --prefix \\.\\.\\/client\\",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
