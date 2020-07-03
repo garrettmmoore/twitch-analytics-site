@@ -15,7 +15,6 @@ let getUsers = async (req, res) => {
     // Set query parameters
     const { login } = req.params;
 
-    console.log('req.headers', req.headers);
     // Get data from Twitch API
     const response = await fetch(`${twitch_api_url}/users?${login}`, {
       headers
@@ -48,6 +47,7 @@ let getUserExtensions = async (req, res) => {
 
     // Format data and send to the client
     const data = await response.json();
+    console.log(data);
     res.json(data);
   } catch (err) {
     serverError(err, res);
