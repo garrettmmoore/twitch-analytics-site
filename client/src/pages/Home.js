@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Form from '../components/Form';
-// import Results from '../components/Results';
-import Extensions from '../components/Extensions';
+import Results from '../components/Results';
+
 const Home = props => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,7 +22,7 @@ const Home = props => {
       {isLoading ? (
         <div className="loading">Loading</div>
       ) : (
-        <Extensions data={data} />
+        <Results data={data} />
       )}
     </div>
   );
