@@ -6,7 +6,7 @@ import fetchData from '../utils/fetchData';
 import Search from '../components/Search';
 
 const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
-  const options = ['login', 'extensions/id'];
+  const options = ['login', 'extensions/user_id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
   const [query, setQuery] = useState('');
 

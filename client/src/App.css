@@ -4,6 +4,13 @@
   padding: 5px;
 }
 
+.loading,
+.errors {
+  float: right;
+  margin-right: 42rem;
+  margin-top: 5rem;
+}
+
 nav {
   background-color: lightgrey;
   padding: 5px;
@@ -30,7 +37,8 @@ ul {
 
 ul.twitch-data-list {
   float: right;
-  margin-right: 50rem;
+  margin-right: 33rem;
+  margin-top: 3rem;
   text-align: left;
 }
 

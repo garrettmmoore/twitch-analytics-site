@@ -18,8 +18,12 @@ const Home = props => {
         setIsLoading={setIsLoading}
         navigate={props.navigate}
       />
-      {isError && <>Something went wrong ...</>}
-      {isLoading ? <>Loading ...</> : <Results data={data} />}
+      {isError && <div className="errors">Something went wrong</div>}
+      {isLoading ? (
+        <div className="loading">Loading</div>
+      ) : (
+        <Results data={data} />
+      )}
     </div>
   );
 };
