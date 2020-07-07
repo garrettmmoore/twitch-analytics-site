@@ -8,7 +8,10 @@ const cors = require('cors');
 dotenv.config({ path: `${__dirname}/.env` });
 
 const app = express();
-
+// enable rate-limiter for localhost
+app.set('trust proxy', 1);
+// enable speed-limiter
+app.enable('trust proxy');
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'build')));
 
