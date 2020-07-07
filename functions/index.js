@@ -8,8 +8,8 @@ const cors = require('cors');
 dotenv.config({ path: `${__dirname}/.env` });
 
 const app = express();
-app.use(cors());
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Enable middleware for logging in development mode
