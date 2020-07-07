@@ -5,7 +5,15 @@ const validateCredentials = require('../utils/validation');
 const config = require('../config');
 const { client_id, client_secret, twitch_api_url } = config;
 
+let cachedData;
+let cacheTime;
+
 let getUsers = async (req, res) => {
+  // Check if we are in the cache and return the cached data
+  // In memory cache
+  if (cacheTime && cacheTime > Date.now() - 30 * 1000) {
+    return res.json(cachedData);
+  }
   try {
     if (validateCredentials(client_id, client_secret, res)) return;
 
@@ -22,17 +30,21 @@ let getUsers = async (req, res) => {
 
     // Format data and send to the client
     const data = await response.json();
+
+    // Set the cache so the next request can use the cached data
+    cachedData = data;
+    cacheTime = Date.now();
+    data.cacheTime = cacheTime;
+
     console.log(data);
-    res.json(data);
+    return res.json(data);
   } catch (err) {
-    serverError(err, res);
+    return serverError(err, res);
   }
 };
 
 let getUserExtensions = async (req, res) => {
   try {
-    if (validateCredentials(client_id, client_secret, res)) return;
-
     // get headers
     let headers = await setHeaders(client_id);
 
@@ -47,10 +59,11 @@ let getUserExtensions = async (req, res) => {
 
     // Format data and send to the client
     const data = await response.json();
+
     console.log(data);
-    res.json(data);
+    return res.json(data);
   } catch (err) {
-    serverError(err, res);
+    return serverError(err, res);
   }
 };
 
