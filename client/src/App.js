@@ -15,9 +15,7 @@ const App = () => (
     </nav>
     <Router>
       <Home path="/">
-        <Form path="/form">
-          <Results path="option:query" />
-        </Form>
+        <Results path="option:query" />
       </Home>
       <NotFound default />
     </Router>
