@@ -1,6 +1,6 @@
 import React from 'react';
-import Extensions from './Extensions';
-import ProfileData from './ProfileData/ProfileData';
+import Extensions from '../Extensions/Extensions';
+import ProfileData from '../ProfileData/ProfileData';
 
 const Results = ({ data }) => {
   let toggle = data.panel;
