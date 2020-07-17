@@ -5,8 +5,7 @@ import './App.css';
 
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Form from './components/Form';
-import Results from './components/Results';
+import Results from './components/Results/Results';
 
 const App = () => (
   <React.StrictMode>
