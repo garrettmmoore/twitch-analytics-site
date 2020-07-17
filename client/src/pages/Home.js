@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Form from '../components/Form';
-import Results from '../components/Results';
+import Form from '../components/Form/Form';
+import Results from '../components/Results/Results';
 
 const Home = props => {
   const [isError, setIsError] = useState(false);
