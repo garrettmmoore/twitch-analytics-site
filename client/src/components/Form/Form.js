@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
 
-import useDropdown from '../hooks/useDropdown';
-import fetchData from '../utils/fetchData';
+import useDropdown from '../../hooks/useDropdown';
+import fetchData from '../../utils/fetchData';
 
-import Search from '../components/Search';
+import Search from '../Search/Search';
+
+const useStateWithLocalStorage = localStorageKey => {
+  const [query, setQuery] = React.useState(
+    localStorage.getItem(localStorageKey) || ''
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem(localStorageKey, query);
+  }, [query]);
+
+  return [query, setQuery];
+};
 
 const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
   const options = ['login', 'extensions/user_id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
-  const [query, setQuery] = useState('');
 
   const URL = process.env.REACT_APP_URL || '';
+
+  const [query, setQuery] = useStateWithLocalStorage('queryStorage');
 
   return (
     <>
