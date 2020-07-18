@@ -1,0 +1,24 @@
+{
+  "name": "twitch-analytics-site",
+  "version": "1.0.0",
+  "description": "Analyze Twitch streamer and game analytics",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run server --prefix \\.\\/functions\\",
+    "client": "npm run start --prefix \\.\\/client\\",
+    "postinstall": "(cd client && npm install); (cd functions && npm install);"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettmmoore/twitch-analytics-site.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garrettmmoore/twitch-analytics-site/issues"
+  },
+  "homepage": "https://github.com/garrettmmoore/twitch-analytics-site#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
