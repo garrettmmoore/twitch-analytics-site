@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Form from '../components/Form/Form';
 import Results from '../components/Results/Results';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const Home = props => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useLocalStorage('dataStorage', []);
 
   return (
     <div className="Home">

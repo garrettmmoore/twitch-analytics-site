@@ -3,6 +3,8 @@ import Extensions from '../Extensions/Extensions';
 import ProfileData from '../ProfileData/ProfileData';
 
 const Results = ({ data }) => {
+  if (data.length > 0) data = JSON.parse(data);
+
   let toggle = data.panel;
 
   return (
