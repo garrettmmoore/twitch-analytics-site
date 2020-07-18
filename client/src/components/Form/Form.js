@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import useDropdown from '../../hooks/useDropdown';
 import fetchData from '../../utils/fetchData';
-import useStateWithLocalStorage from '../../utils/localStorage';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 import Search from '../Search/Search';
 
@@ -12,8 +12,7 @@ const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
 
   const URL = process.env.REACT_APP_URL || '';
 
-  const [query, setQuery] = useStateWithLocalStorage('queryStorage');
-
+  const [query, setQuery] = useLocalStorage('queryStorage', '');
   return (
     <>
       <form
