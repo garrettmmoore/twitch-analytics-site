@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 import Results from './components/Results/Results';
 
 const App = () => (
-  <React.StrictMode>
+  <>
     <nav>
       <Link to="/">Home</Link>
     </nav>
@@ -18,7 +18,7 @@ const App = () => (
       </Home>
       <NotFound default />
     </Router>
-  </React.StrictMode>
+  </>
 );
 
 export default App;

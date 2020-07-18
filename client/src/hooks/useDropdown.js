@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useLocalStorage from './useLocalStorage';
 
 const useDropdown = (label, defaultState, options) => {
-  const [state, setState] = useState(defaultState);
+  const [state, setState] = useLocalStorage('defaultDropdown', defaultState);
   const id = `use-dropdown-${label.replace(' ', '').toLowerCase()}`;
 
   const Dropdown = () => (

@@ -7,7 +7,7 @@ const ProfileData = ({ data }) => {
 
   return (
     <div className="container">
-      <img className="profile-img" src={profile_image_url} />
+      <img className="profile-img" src={profile_image_url} alt="" />
       <div>
         <div className="display-name">{display_name}</div>
         <div className="view-count">{view_count}</div>

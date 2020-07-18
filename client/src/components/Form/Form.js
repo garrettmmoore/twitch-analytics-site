@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
-
-import useDropdown from '../../hooks/useDropdown';
-import fetchData from '../../utils/fetchData';
+import React from 'react';
 
 import Search from '../Search/Search';
 
-const useStateWithLocalStorage = localStorageKey => {
-  const [query, setQuery] = React.useState(
-    localStorage.getItem(localStorageKey) || ''
-  );
-
-  React.useEffect(() => {
-    localStorage.setItem(localStorageKey, query);
-  }, [query]);
-
-  return [query, setQuery];
-};
+import useDropdown from '../../hooks/useDropdown';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import fetchData from '../../utils/fetchData';
 
 const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
   const options = ['login', 'extensions/user_id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
+  const [query, setQuery] = useLocalStorage('queryStorage', '');
 
   const URL = process.env.REACT_APP_URL || '';
-
-  const [query, setQuery] = useStateWithLocalStorage('queryStorage');
 
   return (
     <>
@@ -38,7 +26,7 @@ const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
             setIsLoading
           );
 
-          // Access navigate from props - https://github.com/reach/router/issues/225
+          // Access navigate from props - github.com/reach/router/issues/225
           navigate(`${option}/${query}`);
         }}
       >
