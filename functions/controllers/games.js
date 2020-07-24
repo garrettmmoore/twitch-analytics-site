@@ -10,8 +10,11 @@ let getTopGames = async (req, res) => {
     // Get headers
     let headers = await setHeaders(client_id);
 
+    // Set query parameters
+    const { count } = req.params;
+
     // Get data from Twitch API
-    const response = await fetch(`${twitch_api_url}/games/top`, {
+    const response = await fetch(`${twitch_api_url}/games/top?first=${count}`, {
       headers
     });
 
