@@ -5,7 +5,7 @@ const router = express.Router();
 /**
  * Gets games sorted by number of current viewers on Twitch, most popular first.
  */
-router.get('/top', getTopGames);
+router.get('/top/:count', getTopGames);
 
 /**
  * Gets game information by game ID or name.
