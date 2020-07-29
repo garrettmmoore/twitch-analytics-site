@@ -23,7 +23,7 @@ Analyze Twitch streamer and game analytics
 
 2. Copy the values from `.env.example` into a new `.env` file to set up your credentials
 
-3. 2. Navigate to the `client` directory and install Node Dependencies ->
+3. Navigate to the `client` directory and install Node Dependencies ->
    ```bash
    cd functions
    ```
@@ -32,7 +32,7 @@ Analyze Twitch streamer and game analytics
    npm install
    ```
 
-3. Return to the root of the project, install dependencies, and start both the backend and frontend servers ->
+4. Return to the root of the project, install dependencies, and start both the backend and frontend servers ->
    ```bash
    npm install
    ```
@@ -41,4 +41,4 @@ Analyze Twitch streamer and game analytics
    npm start
    ```
 
-4. With both servers running, navigate to `http://localhost:3000` in your browser and enter in a Twitch username to fetch user data from the API
+5. With both servers running, navigate to `http://localhost:3000` in your browser and enter in a Twitch username to fetch user data from the API
