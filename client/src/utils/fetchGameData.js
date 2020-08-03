@@ -4,6 +4,8 @@ const fetchGameData = async (url, setGameData, setIsError, setIsLoading) => {
   setIsError(false);
   setIsLoading(true);
 
+  console.log('fetching');
+
   try {
     const result = await axios(url);
     setGameData(result.data.data || []);
