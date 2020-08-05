@@ -9,8 +9,6 @@ const GameForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
     ''
   );
 
-  const URL = process.env.REACT_APP_URL || '';
-
   const handleSubmit = async e => {
     e.preventDefault();
     await fetchGameData(
@@ -24,11 +22,9 @@ const GameForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   };
 
   return (
-    <>
-      <form className="twitch-form" onSubmit={handleSubmit}>
-        <Search query={numberQuery} setQuery={setNumberQuery} />
-      </form>
-    </>
+    <form className="twitch-form" onSubmit={handleSubmit}>
+      <Search query={numberQuery} setQuery={setNumberQuery} />
+    </form>
   );
 };
 
