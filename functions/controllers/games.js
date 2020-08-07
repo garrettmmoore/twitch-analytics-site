@@ -26,7 +26,7 @@ let getTopGames = async (req, res) => {
   }
 };
 
-let getGame = async (req, res) => {
+let getGames = async (req, res) => {
   try {
     // validate credentials
     if (validateCredentials(client_id, client_secret, res)) return;
@@ -36,9 +36,13 @@ let getGame = async (req, res) => {
 
     // Set query parameters
     const { id } = req.params;
+    let params = '';
+    if (id.includes(',')) id.split(',').forEach(id => (params += `id=${id}&`));
+    else params = `id=${id}`;
 
     // Get data from Twitch API
-    const response = await fetch(`${twitch_api_url}/games?${id}`, {
+    // const response = await fetch(`${twitch_api_url}/games?id=33214&id=493057&`, {
+    const response = await fetch(`${twitch_api_url}/games?${params}`, {
       headers
     });
 
@@ -50,4 +54,4 @@ let getGame = async (req, res) => {
   }
 };
 
-module.exports = { getTopGames, getGame };
+module.exports = { getTopGames, getGames };

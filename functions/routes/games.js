@@ -1,5 +1,5 @@
 const express = require('express');
-const { getTopGames, getGame } = require('../controllers/games');
+const { getTopGames, getGames } = require('../controllers/games');
 const router = express.Router();
 
 /**
@@ -10,6 +10,6 @@ router.get('/top/:count', getTopGames);
 /**
  * Gets game information by game ID or name.
  */
-router.get('/:id', getGame);
+router.get('/:id', getGames);
 
 module.exports = router;
