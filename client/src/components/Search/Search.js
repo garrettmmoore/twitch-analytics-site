@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ query, setQuery }) => (
+const Search = ({ query, setQuery, label }) => (
   <>
     <label htmlFor="searchValue">
       <input
@@ -9,9 +9,7 @@ const Search = ({ query, setQuery }) => (
         onChange={e => setQuery(e.target.value)}
         onBlur={e => setQuery(e.target.value)}
       />
-      <button type="submit" disabled={!query}>
-        Submit
-      </button>
+      <button type="submit">{label}</button>
     </label>
   </>
 );

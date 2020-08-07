@@ -3,8 +3,6 @@ import React from 'react';
 const GameResults = ({ gameData }) => {
   let parsedGameData = JSON.parse(gameData) || [];
 
-  console.log('parsed', parsedGameData);
-
   return (
     <ul>
       {parsedGameData.map(game => (
