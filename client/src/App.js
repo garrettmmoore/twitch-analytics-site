@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Results from './components/Results/Results';
 import Games from './pages/Games';
+import GameResults from './components/GameResults/GameResults';
 
 const App = () => (
   <>
@@ -20,7 +21,9 @@ const App = () => (
       <Home path="/">
         <Results path="option:query" />
       </Home>
-      <Games path="/games"></Games>
+      <Games path="/games">
+        <GameResults path="query" />
+      </Games>
       <NotFound default />
     </Router>
   </>
