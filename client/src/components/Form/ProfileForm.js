@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Search from '../Search/Search';
-
+import fetchData from '../../utils/fetchData';
+import SearchBar from '../common/SearchBar';
 import useDropdown from '../../hooks/useDropdown';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import fetchData from '../../utils/fetchData';
 
-const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
+const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
   const options = ['login', 'extensions/user_id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
   const [query, setQuery] = useLocalStorage('queryStorage', '');
@@ -30,9 +29,9 @@ const Form = ({ setData, setIsError, setIsLoading, navigate }) => {
       }}
     >
       <Dropdown className="dropdown" />
-      <Search query={query} setQuery={setQuery} label={'Get Profile Data'} />
+      <SearchBar query={query} setQuery={setQuery} label={'Get Profile Data'} />
     </form>
   );
 };
 
-export default Form;
+export default ProfileForm;

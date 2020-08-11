@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import GameResults from '../components/GameResults/GameResults';
-import useLocalStorage from '../hooks/useLocalStorage';
+import React, { useState } from 'react';
 
-import GamesForm from '../components/Form/GamesForm';
-import TopGamesForm from '../components/Form/TopGamesForm';
+import GamesResults from '../components/results/GamesResults';
+import GamesForm from '../components/form/GamesForm';
+import TopGamesForm from '../components/form/TopGamesForm';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const Games = props => {
   const [isError, setIsError] = useState(false);
@@ -30,7 +30,7 @@ const Games = props => {
       {isLoading ? (
         <div className="loading">Loading</div>
       ) : (
-        <GameResults gameData={gameData} />
+        <GamesResults gameData={gameData} />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ query, setQuery, label }) => (
+const SearchBar = ({ query, setQuery, label }) => (
   <>
     <label htmlFor="searchValue">
       <input
@@ -14,4 +14,4 @@ const Search = ({ query, setQuery, label }) => (
   </>
 );
 
-export default Search;
+export default SearchBar;

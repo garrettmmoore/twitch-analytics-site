@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameResults = ({ gameData }) => {
+const GamesResults = ({ gameData }) => {
   let parsedGameData = JSON.parse(gameData) || [];
 
   return (
@@ -18,4 +18,4 @@ const GameResults = ({ gameData }) => {
   );
 };
 
-export default GameResults;
+export default GamesResults;

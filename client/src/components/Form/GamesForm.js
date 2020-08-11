@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import useLocalStorage from '../../hooks/useLocalStorage';
+import React, { useState } from 'react';
+
 import fetchGameData from '../../utils/fetchGameData';
 
-const GameForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
+const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   const [games, setGames] = useState([]);
 
   const handleSubmit = async e => {
@@ -48,4 +48,4 @@ const GameForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   );
 };
 
-export default GameForm;
+export default GamesForm;
