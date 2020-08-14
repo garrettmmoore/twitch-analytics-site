@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Extensions = ({ data }) => {
+const ExtensionsData = ({ data }) => {
   const extensions = [];
-  // eslint-disable-next-line
+
   Object.entries(data).map(extensionType => {
     Object.entries(extensionType[1]).forEach(extension => {
       extensions.push(extension[1]);
@@ -30,4 +30,4 @@ const Extensions = ({ data }) => {
   );
 };
 
-export default Extensions;
+export default ExtensionsData;

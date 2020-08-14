@@ -1,13 +1,13 @@
-import React from 'react';
 import { Router, Link } from '@reach/router';
+import React from 'react';
 
-import './App.css';
-
+import GameResults from './components/results/GamesResults';
+import Games from './pages/Games';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Results from './components/Results/Results';
-import Games from './pages/Games';
-import GameResults from './components/GameResults/GameResults';
+import Results from './components/results/ProfileResults';
+
+import './App.css';
 
 const App = () => (
   <>
