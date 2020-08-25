@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
+import GameTypesMenu from '../common/GameTypesMenu';
 
 import fetchGameData from '../../utils/fetchGameData';
 
 const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   const [games, setGames] = useState([]);
+  const [selected, setSelected] = useState([]);
+  const format = async selected => {
+    let formattedGames = [];
+
+    selected.forEach(game => {
+      formattedGames.push(game.value);
+    });
+
+    console.log('format selecteddd', formattedGames);
+    return formattedGames;
+  };
 
   const handleSubmit = async e => {
     e.preventDefault();
     let params = '';
-
-    games.forEach(id => (params += `${id},`));
+    let formatted = await format(selected);
+    formatted.forEach(id => (params += `${id},`));
 
     await fetchGameData(
       `/games/${params}`,
@@ -30,20 +42,7 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   return (
     <form className="twitch-form" onSubmit={handleSubmit}>
       <button type="submit">Fetch Selected Games</button>
-      <input
-        type="checkbox"
-        name="Fortnite"
-        value="33214"
-        onChange={handleChange}
-      />
-      <label htmlFor="Fortnite">Fortnite</label>
-      <input
-        type="checkbox"
-        name="Pub G"
-        value="493057"
-        onChange={handleChange}
-      />
-      <label htmlFor="Pub G">Pub G</label>
+      <GameTypesMenu selected={selected} setSelected={setSelected} />
     </form>
   );
 };
