@@ -1,4 +1,4 @@
-import { Router, Link } from '@reach/router';
+import { Router } from '@reach/router';
 import React from 'react';
 
 import GameResults from './components/results/GamesResults';
@@ -6,17 +6,13 @@ import Results from './components/results/ProfileResults';
 import Games from './pages/Games';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import NavBar from './components/common/NavBar';
 
 import './App.css';
 
 const App = () => (
   <>
-    <nav>
-      <Link to="/">Home</Link>
-    </nav>
-    <nav>
-      <Link to="/games">Game</Link>
-    </nav>
+    <NavBar />
     <Router>
       <Home path="/">
         <Results path="option:query" />
