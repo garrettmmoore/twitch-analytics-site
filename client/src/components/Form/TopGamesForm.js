@@ -1,6 +1,5 @@
 import React from 'react';
-
-import fetchTopGames from '../../utils/fetchGameData';
+import fetchGameData from '../../utils/fetchGameData';
 import SearchBar from '../common/SearchBar';
 import useLocalStorage from '../../hooks/useLocalStorage';
 
@@ -13,7 +12,7 @@ const TopGamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    await fetchTopGames(
+    await fetchGameData(
       `/games/top/${numberTopGames}`,
       setGameData,
       setIsError,
@@ -24,7 +23,7 @@ const TopGamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   };
 
   return (
-    <form className="twitch-form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <SearchBar
         query={numberTopGames}
         setQuery={setNumberTopGames}
