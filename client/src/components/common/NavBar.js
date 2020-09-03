@@ -1,6 +1,6 @@
-import React from 'react';
+import { Box, Flex } from '@chakra-ui/core';
 import { Link } from '@reach/router';
-import { SimpleGrid, Flex, Box } from '@chakra-ui/core';
+import React from 'react';
 const NavBar = () => {
   return (
     <>
@@ -8,6 +8,11 @@ const NavBar = () => {
         <nav>
           <Box background="skyblue" borderRadius="10px">
             <Link to="/">Home</Link>
+          </Box>
+        </nav>
+        <nav>
+          <Box background="skyblue" borderRadius="10px">
+            <Link to="/profiles">Profiles</Link>
           </Box>
         </nav>
         <nav>
