@@ -3,6 +3,7 @@ import React from 'react';
 const ExtensionsData = ({ data }) => {
   const extensions = [];
 
+  // eslint-disable-next-line
   Object.entries(data).map(extensionType => {
     Object.entries(extensionType[1]).forEach(extension => {
       extensions.push(extension[1]);

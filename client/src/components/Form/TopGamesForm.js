@@ -1,7 +1,7 @@
 import React from 'react';
+import useLocalStorage from '../../hooks/useLocalStorage';
 import fetchGameData from '../../utils/fetchGameData';
 import SearchBar from '../common/SearchBar';
-import useLocalStorage from '../../hooks/useLocalStorage';
 
 const TopGamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
   const [numberTopGames, setNumberTopGames] = useLocalStorage(

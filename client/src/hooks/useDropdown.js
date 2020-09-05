@@ -1,5 +1,4 @@
 import React from 'react';
-
 import useLocalStorage from './useLocalStorage';
 
 const useDropdown = (label, defaultState, options) => {
