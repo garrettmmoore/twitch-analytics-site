@@ -1,11 +1,12 @@
 import React from 'react';
-
+import { Flex, Box } from '@chakra-ui/core';
 const Home = () => {
   return (
-    <div className="Home">
-      <h1>Twitch Analytics</h1>
-      <p>Enter your Twitch Username to see your profile data</p>
-    </div>
+    <Flex justifyContent="center">
+      <Box as="h1" fontWeight="bold" fontSize="50px">
+        Twitch Analytics
+      </Box>
+    </Flex>
   );
 };
 

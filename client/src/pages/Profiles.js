@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Flex, Box } from '@chakra-ui/core';
 import ProfileForm from '../components/form/ProfileForm';
 import ProfileResults from '../components/results/ProfileResults';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -9,10 +10,19 @@ const Profiles = props => {
   const [data, setData] = useLocalStorage('dataStorage', []);
 
   return (
-    <div className="Home">
-      <h1>Twitch Analytics</h1>
-
-      <p>Enter your Twitch Username to see your profile data</p>
+    <Flex justifyContent="center" display="grid">
+      <Box
+        as="h1"
+        align="center"
+        fontSize="25px"
+        marginTop="20px"
+        marginBottom="20px"
+      >
+        Twitch Profile Data
+      </Box>
+      <Box as="h2" fontSize="20px" marginBottom="20px">
+        Enter your Twitch Username to see your profile data
+      </Box>
       <ProfileForm
         setData={setData}
         setIsError={setIsError}
@@ -25,7 +35,7 @@ const Profiles = props => {
       ) : (
         <ProfileResults data={data} />
       )}
-    </div>
+    </Flex>
   );
 };
 

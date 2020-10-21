@@ -11,7 +11,7 @@ const Games = props => {
 
   return (
     <div className="Games">
-      <h1>Get Top Twitch Games</h1>
+      <h1>Twitch Games</h1>
       <GamesForm
         setGameData={setGameData}
         setIsError={setIsError}
