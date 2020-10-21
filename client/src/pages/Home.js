@@ -1,32 +1,12 @@
-import React, { useState } from 'react';
-
-import ProfileForm from '../components/form/ProfileForm';
-import ProfileResults from '../components/results/ProfileResults';
-import useLocalStorage from '../hooks/useLocalStorage';
-
-const Home = props => {
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useLocalStorage('dataStorage', []);
-
+import React from 'react';
+import { Flex, Box } from '@chakra-ui/core';
+const Home = () => {
   return (
-    <div className="Home">
-      <h1>Twitch Analytics</h1>
-
-      <p>Enter your Twitch Username to see your profile data</p>
-      <ProfileForm
-        setData={setData}
-        setIsError={setIsError}
-        setIsLoading={setIsLoading}
-        navigate={props.navigate}
-      />
-      {isError && <div className="errors">Something went wrong</div>}
-      {isLoading ? (
-        <div className="loading">Loading</div>
-      ) : (
-        <ProfileResults data={data} />
-      )}
-    </div>
+    <Flex justifyContent="center">
+      <Box as="h1" fontWeight="bold" fontSize="50px">
+        Twitch Analytics
+      </Box>
+    </Flex>
   );
 };
 

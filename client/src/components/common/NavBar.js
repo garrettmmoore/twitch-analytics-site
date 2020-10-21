@@ -1,22 +1,31 @@
-import React from 'react';
+import { Box, Flex } from '@chakra-ui/core';
 import { Link } from '@reach/router';
-import { SimpleGrid, Flex, Box } from '@chakra-ui/core';
+import React from 'react';
+
 const NavBar = () => {
   return (
-    <>
-      <Flex direction="row">
-        <nav>
-          <Box background="skyblue" borderRadius="10px">
-            <Link to="/">Home</Link>
-          </Box>
-        </nav>
-        <nav>
-          <Box background="skyblue" borderRadius="10px">
-            <Link to="/games">Game</Link>
-          </Box>
-        </nav>
-      </Flex>
-    </>
+    <Flex
+      direction="row"
+      justifyContent="center"
+      m="10px"
+      backgroundColor="#ccc"
+    >
+      <nav>
+        <Box background="skyblue" borderRadius=".25em" padding="1em" m="10px">
+          <Link to="/">Home</Link>
+        </Box>
+      </nav>
+      <nav>
+        <Box background="skyblue" borderRadius=".25em" padding="1em" m="10px">
+          <Link to="/profiles">Profiles</Link>
+        </Box>
+      </nav>
+      <nav>
+        <Box background="skyblue" borderRadius=".25em" padding="1em" m="10px">
+          <Link to="/games">Game</Link>
+        </Box>
+      </nav>
+    </Flex>
   );
 };
 

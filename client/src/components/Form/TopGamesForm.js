@@ -1,34 +1,30 @@
 import React from 'react';
+import useLocalStorage from '../../hooks/useLocalStorage';
 import fetchGameData from '../../utils/fetchGameData';
 import SearchBar from '../common/SearchBar';
-import useLocalStorage from '../../hooks/useLocalStorage';
+import useForm from '../../hooks/useForm';
 
 const TopGamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
-  const [numberTopGames, setNumberTopGames] = useLocalStorage(
-    'numberTopGames',
-    ''
-  );
+  const { form, reset, set } = useForm({
+    numberTopGames: ''
+  });
 
   const handleSubmit = async e => {
     e.preventDefault();
 
     await fetchGameData(
-      `/games/top/${numberTopGames}`,
+      `/games/top/${form.numberTopGames}`,
       setGameData,
       setIsError,
       setIsLoading
     );
-
-    navigate(`${numberTopGames}`);
+    reset();
+    navigate(`${form.numberTopGames}`);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <SearchBar
-        query={numberTopGames}
-        setQuery={setNumberTopGames}
-        label={`Get top games`}
-      />
+      <SearchBar {...set('numberTopGames')} label={`Get Top Games`} />
     </form>
   );
 };

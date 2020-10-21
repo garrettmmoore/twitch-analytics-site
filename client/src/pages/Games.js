@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
-import GamesResults from '../components/results/GamesResults';
 import GamesForm from '../components/form/GamesForm';
 import TopGamesForm from '../components/form/TopGamesForm';
+import GamesResults from '../components/results/GamesResults';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const Games = props => {
@@ -12,7 +11,7 @@ const Games = props => {
 
   return (
     <div className="Games">
-      <h1>Get Top Twitch Games</h1>
+      <h1>Twitch Games</h1>
       <GamesForm
         setGameData={setGameData}
         setIsError={setIsError}
@@ -25,7 +24,6 @@ const Games = props => {
         setIsLoading={setIsLoading}
         navigate={props.navigate}
       />
-
       {isError && <div className="errors">Something went wrong</div>}
       {isLoading ? (
         <div className="loading">Loading</div>

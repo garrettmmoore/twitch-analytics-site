@@ -1,5 +1,5 @@
+import { AspectRatioBox, Box, Image, SimpleGrid } from '@chakra-ui/core';
 import React from 'react';
-import { SimpleGrid, Box, AspectRatioBox, Image } from '@chakra-ui/core';
 
 const GamesResults = ({ gameData }) => {
   let parsedGameData = JSON.parse(gameData) || [];
