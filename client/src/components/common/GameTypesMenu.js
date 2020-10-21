@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/core';
 import React from 'react';
 import MultiSelect from 'react-multi-select-component';
 
@@ -8,15 +9,14 @@ const options = [
 
 const GameTypesMenu = ({ selected, setSelected }) => {
   return (
-    <div>
-      <h1>Select Games</h1>
+    <Box w="200px" mr={5}>
       <MultiSelect
         options={options}
         value={selected}
         onChange={setSelected}
         labelledBy={'Select'}
       />
-    </div>
+    </Box>
   );
 };
 

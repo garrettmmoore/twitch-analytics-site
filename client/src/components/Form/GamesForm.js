@@ -1,11 +1,11 @@
+import { Button, Flex } from '@chakra-ui/core';
 import React, { useState } from 'react';
+import fetchGameData from '../../utils/fetchGameData';
 import GameTypesMenu from '../common/GameTypesMenu';
 
-import fetchGameData from '../../utils/fetchGameData';
-
 const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
-  const [games, setGames] = useState([]);
   const [selected, setSelected] = useState([]);
+
   const format = async selected => {
     let formattedGames = [];
 
@@ -13,7 +13,6 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
       formattedGames.push(game.value);
     });
 
-    console.log('format selecteddd', formattedGames);
     return formattedGames;
   };
 
@@ -21,6 +20,7 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
     e.preventDefault();
     let params = '';
     let formatted = await format(selected);
+
     formatted.forEach(id => (params += `${id},`));
 
     await fetchGameData(
@@ -30,19 +30,17 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
       setIsLoading
     );
 
-    navigate(`${params}`);
-  };
-
-  const handleChange = e => {
-    const { value } = e.target;
-    if (!games.includes(value)) setGames([...games, value]);
-    else setGames(games.filter(game => game !== value));
+    return navigate(`${params}`);
   };
 
   return (
     <form className="twitch-form" onSubmit={handleSubmit}>
-      <button type="submit">Fetch Selected Games</button>
-      <GameTypesMenu selected={selected} setSelected={setSelected} />
+      <Flex direction="row" align="flex-end" margin={5}>
+        <GameTypesMenu selected={selected} setSelected={setSelected} />
+        <Button type="submit" isDisabled={!selected} size="md">
+          Get Selected Games
+        </Button>
+      </Flex>
     </form>
   );
 };

@@ -8,6 +8,7 @@ const useDropdown = (label, defaultState, options) => {
   const Dropdown = () => (
     <label htmlFor={id}>
       <select
+        style={{ border: 'solid', borderColor: '#eee', borderRadius: '.25em' }}
         id={id}
         value={state}
         onChange={e => setState(e.target.value)}
