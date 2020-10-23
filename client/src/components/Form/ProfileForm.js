@@ -1,8 +1,9 @@
-import React from 'react';
+import { Flex } from '@chakra-ui/core';
+import React, { useState, useEffect } from 'react';
 import useDropdown from '../../hooks/useDropdown';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import fetchProfileData from '../../utils/fetchProfileData';
-import SearchBar from '../common/SearchBar';
+import ProfileSearchBar from '../common/ProfileSearchBar';
 
 const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
   const options = ['login', 'extensions/user_id'];
@@ -12,6 +13,7 @@ const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
 
   return (
     <form
+      style={{ marginBottom: '100px' }}
       className="twitch-form"
       onSubmit={e => {
         e.preventDefault();
@@ -25,8 +27,14 @@ const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
         navigate(`${option}/${query}`);
       }}
     >
-      <Dropdown className="dropdown" />
-      <SearchBar query={query} setQuery={setQuery} label={'Get Profile Data'} />
+      <Flex alignItems="center" justifyItems="space-between">
+        <Dropdown className="dropdown" />
+        <ProfileSearchBar
+          query={query}
+          setQuery={setQuery}
+          label={'Get Profile Data'}
+        />
+      </Flex>
     </form>
   );
 };
