@@ -15,13 +15,14 @@ const Profiles = props => {
         as="h1"
         align="center"
         fontSize="25px"
+        fontWeight="bold"
         marginTop="20px"
         marginBottom="20px"
       >
         Twitch Profile Data
       </Box>
       <Box as="h2" fontSize="20px" marginBottom="20px">
-        Enter your Twitch Username to see your profile data
+        Enter your Twitch username to see your profile data
       </Box>
       <ProfileForm
         setData={setData}
