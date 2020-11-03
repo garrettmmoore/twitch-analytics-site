@@ -35,7 +35,7 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
 
   return (
     <form className="twitch-form" onSubmit={handleSubmit}>
-      <Flex direction="row" align="flex-end" margin={5}>
+      <Flex direction="row" align="flex-end" my={5}>
         <GameTypesMenu selected={selected} setSelected={setSelected} />
         <Button type="submit" isDisabled={!selected} size="md">
           Get Selected Games

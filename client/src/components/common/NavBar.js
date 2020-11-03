@@ -7,7 +7,7 @@ const NavBar = () => {
     <Flex
       direction="row"
       justifyContent="center"
-      m="10px"
+      mb="10px"
       backgroundColor="#ccc"
     >
       <nav>

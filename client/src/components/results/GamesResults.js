@@ -5,9 +5,9 @@ const GamesResults = ({ gameData }) => {
   let parsedGameData = JSON.parse(gameData) || [];
 
   return (
-    <SimpleGrid minChildWidth="20rem">
+    <SimpleGrid minChildWidth="20rem" spacing="5">
       {parsedGameData.map(game => (
-        <Box key={game.id} m={5}>
+        <Box key={game.id}>
           <h1>{game.name}</h1>
           <AspectRatioBox maxW="500px" ratio={4 / 5}>
             <Image
