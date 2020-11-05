@@ -1,6 +1,8 @@
 # Twitch Analytics Site
 
-Analyze Twitch streamer and game analytics
+Analyze Twitch streamer and game analytics.
+
+Fetch game data and user profile data.
 
 ## Requirements
 
