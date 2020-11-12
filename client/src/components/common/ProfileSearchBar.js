@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input, Flex, Button } from '@chakra-ui/core';
 
 const ProfileSearchBar = ({ query, setQuery, label }) => (

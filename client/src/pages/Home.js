@@ -1,4 +1,3 @@
-import React from 'react';
 import { Flex, Box } from '@chakra-ui/core';
 const Home = () => {
   return (

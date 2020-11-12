@@ -1,5 +1,4 @@
 import { Link } from '@reach/router';
-import React from 'react';
 
 const NotFound = () => (
   <>

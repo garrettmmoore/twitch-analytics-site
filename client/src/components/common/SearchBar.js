@@ -1,5 +1,4 @@
 import { Button, Flex, Input } from '@chakra-ui/core';
-import React from 'react';
 
 const SearchBar = ({ name, value, onChange, label }) => (
   <label htmlFor="searchValue">

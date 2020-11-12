@@ -1,4 +1,3 @@
-import React from 'react';
 import ExtensionsData from '../data/ExtensionsData';
 import ProfileData from '../data/ProfileData';
 

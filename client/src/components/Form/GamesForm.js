@@ -1,5 +1,5 @@
 import { Button, Flex } from '@chakra-ui/core';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import fetchGameData from '../../utils/fetchGameData';
 import GameTypesMenu from '../common/GameTypesMenu';
 

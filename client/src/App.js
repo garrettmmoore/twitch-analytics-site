@@ -1,5 +1,4 @@
 import { Router } from '@reach/router';
-import React from 'react';
 import './App.css';
 import NavBar from './components/common/NavBar';
 import GameResults from './components/results/GamesResults';

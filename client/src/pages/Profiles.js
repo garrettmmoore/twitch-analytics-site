@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Flex, Box } from '@chakra-ui/core';
 import ProfileForm from '../components/form/ProfileForm';
 import ProfileResults from '../components/results/ProfileResults';

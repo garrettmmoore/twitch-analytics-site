@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import GamesForm from '../components/form/GamesForm';
 import TopGamesForm from '../components/form/TopGamesForm';
 import GamesResults from '../components/results/GamesResults';
