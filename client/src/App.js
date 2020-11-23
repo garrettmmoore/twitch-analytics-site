@@ -1,4 +1,5 @@
 import { Router } from '@reach/router';
+import { ReactQueryDevtools } from 'react-query-devtools';
 import './App.css';
 import NavBar from './components/common/NavBar';
 import GameResults from './components/results/GamesResults';
@@ -21,6 +22,7 @@ const App = () => (
       </Games>
       <NotFound default />
     </Router>
+    <ReactQueryDevtools initialIsOpen />
   </>
 );
 
