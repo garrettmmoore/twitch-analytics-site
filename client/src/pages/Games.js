@@ -3,7 +3,7 @@ import GamesForm from '../components/form/GamesForm';
 import TopGamesForm from '../components/form/TopGamesForm';
 import GamesResults from '../components/results/GamesResults';
 import useLocalStorage from '../hooks/useLocalStorage';
-import { Box, Divider, Flex, SimpleGrid } from '@chakra-ui/core';
+import { Box, Divider, SimpleGrid } from '@chakra-ui/core';
 
 const Games = props => {
   const [isError, setIsError] = useState(false);

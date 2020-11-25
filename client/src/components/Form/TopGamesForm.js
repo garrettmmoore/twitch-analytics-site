@@ -1,4 +1,3 @@
-import useLocalStorage from '../../hooks/useLocalStorage';
 import fetchGameData from '../../utils/fetchGameData';
 import SearchBar from '../common/SearchBar';
 import useForm from '../../hooks/useForm';
