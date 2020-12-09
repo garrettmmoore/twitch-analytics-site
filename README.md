@@ -4,6 +4,11 @@ Analyze Twitch streamer and game analytics.
 
 Fetch game data and user profile data.
 
+## Technology
+
+- React
+- Node.js
+
 ## Requirements
 
 - Install Node.js (^12.0.0)
