@@ -8,6 +8,7 @@ Fetch game data and user profile data.
 
 - React
 - Node.js
+- Chakra UI
 
 ## Requirements
 
