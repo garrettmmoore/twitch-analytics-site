@@ -19,7 +19,7 @@ Fetch game data and user profile data.
 
 ## Run locally
 
-1. Navigate into the `functions` directory and install Node Dependencies ->
+1. From the root directory, navigate into the `functions` directory and install Node Dependencies ->
 
    ```bash
    cd functions
@@ -31,9 +31,9 @@ Fetch game data and user profile data.
 
 2. Copy the values from `.env.example` into a new `.env` file to set up your credentials
 
-3. Navigate into the `client` directory and install Node Dependencies ->
+3. From the root directory, navigate into the `client` directory and install Node Dependencies ->
    ```bash
-   cd functions
+   cd client
    ```
 
    ```bash
