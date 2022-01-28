@@ -1,6 +1,7 @@
-const qs = require('querystring');
-const nodeFetch = require('node-fetch');
-const config = require('../config');
+import nodeFetch from 'node-fetch';
+import { stringify } from 'querystring';
+
+import config from '../config.js';
 
 /**
  * Get Twitch Access Token
@@ -17,7 +18,7 @@ const getTwitchAccessToken = async ({
   twitch_oauth_url
 } = config) => {
   // Stringify the url query string
-  const params = qs.stringify({
+  const params = stringify({
     client_id,
     client_secret,
     grant_type,
@@ -25,21 +26,16 @@ const getTwitchAccessToken = async ({
   });
 
   // Make request to Twitch to aquire an access token
-  const {
-    access_token,
-    refresh_token,
-    expires_in,
-    scope,
-    token_type
-  } = await nodeFetch(`${twitch_oauth_url}?${params}`, {
-    method: 'POST'
-  })
-    .then(res => res.json())
-    .catch(err => {
-      throw new Error(err.message);
-    });
+  const { access_token, refresh_token, expires_in, scope, token_type } =
+    await nodeFetch(`${twitch_oauth_url}?${params}`, {
+      method: 'POST'
+    })
+      .then(res => res.json())
+      .catch(err => {
+        throw new Error(err.message);
+      });
 
   return { access_token, refresh_token, expires_in, token_type, scope };
 };
 
-module.exports = getTwitchAccessToken;
+export default getTwitchAccessToken;

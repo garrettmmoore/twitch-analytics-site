@@ -1,20 +1,25 @@
-const express = require('express');
-const rateLimit = require('express-rate-limit');
-const slowDown = require('express-slow-down');
+import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
+import slowDown from 'express-slow-down';
 
-const { getUsers, getUserExtensions } = require('../controllers/users');
-const router = express.Router();
+import { getUserExtensions, getUsers } from '../controllers/users.js';
+
+const usersRouter = Router();
 
 const userLimiter = rateLimit({
   windowMs: 30 * 1000, // 30 seconds
   max: 10, // limit each IP to 10 requests per windowMs
-  message: 'User endpoint rate limit has been reached.'
+  message: 'User endpoint rate limit has been reached.',
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false // Disable the `X-RateLimit-*` headers
 });
 
 const extensionLimiter = rateLimit({
   windowMs: 30 * 1000, // 30 seconds
   max: 10, // limit each IP to 10 requests per windowMs
-  message: 'Extension endpoint rate limit has been reached.'
+  message: 'Extension endpoint rate limit has been reached.',
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false // Disable the `X-RateLimit-*` headers
 });
 
 const speedLimiter = slowDown({
@@ -27,17 +32,17 @@ const speedLimiter = slowDown({
  * Gets information about one or more specified Twitch users.
  * Users are identified by optional user IDs and/or login name.
  */
-router.get('/:login', userLimiter, speedLimiter, getUsers);
+usersRouter.get('/:login', userLimiter, speedLimiter, getUsers);
 
 /**
  * Get a list of all extensions (both active and inactive) for a specified user.
  * User is identified by user ID.
  */
-router.get(
+usersRouter.get(
   '/extensions/:user_id',
   extensionLimiter,
   speedLimiter,
   getUserExtensions
 );
 
-module.exports = router;
+export default usersRouter;

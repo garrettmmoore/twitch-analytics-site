@@ -1,14 +1,16 @@
-const fetch = require('node-fetch');
-const { serverError } = require('../utils/errors');
-const setHeaders = require('../auth/setHeaders');
-const validateCredentials = require('../utils/validation');
-const config = require('../config');
+import fetch from 'node-fetch';
+
+import setHeaders from '../auth/setHeaders.js';
+import config from '../config.js';
+import { serverError } from '../utils/errors.js';
+import validateCredentials from '../utils/validation.js';
+
 const { client_id, client_secret, twitch_api_url } = config;
 
 let cachedData;
 let cacheTime;
 
-let getUsers = async (req, res) => {
+const getUsers = async (req, res) => {
   // Check if we are in the cache and return the cached data
   // In memory cache
   if (cacheTime && cacheTime > Date.now() - 30 * 1000) {
@@ -43,7 +45,7 @@ let getUsers = async (req, res) => {
   }
 };
 
-let getUserExtensions = async (req, res) => {
+const getUserExtensions = async (req, res) => {
   try {
     // get headers
     let headers = await setHeaders(client_id);
@@ -67,4 +69,4 @@ let getUserExtensions = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, getUserExtensions };
+export { getUserExtensions, getUsers };

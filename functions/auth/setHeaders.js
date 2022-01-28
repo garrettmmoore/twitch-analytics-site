@@ -1,4 +1,4 @@
-const getTwitchAccessToken = require('./get-twitch-oauth');
+import getTwitchAccessToken from './get-twitch-oauth.js';
 
 let setHeaders = async client_id => {
   const { access_token } = await getTwitchAccessToken();
@@ -12,4 +12,4 @@ let setHeaders = async client_id => {
   return headers;
 };
 
-module.exports = setHeaders;
+export default setHeaders;

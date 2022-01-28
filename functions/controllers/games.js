@@ -1,11 +1,13 @@
-const fetch = require('node-fetch');
-const serverError = require('../utils/errors');
-const setHeaders = require('../auth/setHeaders');
-const validateCredentials = require('../utils/validation');
-const config = require('../config');
+import fetch from 'node-fetch';
+
+import setHeaders from '../auth/setHeaders.js';
+import config from '../config.js';
+import { serverError } from '../utils/errors.js';
+import validateCredentials from '../utils/validation.js';
+
 const { client_id, client_secret, twitch_api_url } = config;
 
-let getTopGames = async (req, res) => {
+export let getTopGames = async (req, res) => {
   try {
     // Get headers
     let headers = await setHeaders(client_id);
@@ -26,7 +28,7 @@ let getTopGames = async (req, res) => {
   }
 };
 
-let getGames = async (req, res) => {
+export let getGames = async (req, res) => {
   try {
     // validate credentials
     if (validateCredentials(client_id, client_secret, res)) return;
@@ -53,5 +55,3 @@ let getGames = async (req, res) => {
     serverError(err, res);
   }
 };
-
-module.exports = { getTopGames, getGames };

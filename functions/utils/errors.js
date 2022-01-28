@@ -1,4 +1,4 @@
-let serverError = (err, res) => {
+export const serverError = (err, res) => {
   console.error(err);
 
   return res.status(500).json({
@@ -6,16 +6,14 @@ let serverError = (err, res) => {
   });
 };
 
-let clientIDError = res => {
+export const clientIDError = res => {
   return res.status(401).json({
     message: 'You must provide a Client ID.'
   });
 };
 
-let clientSecretError = res => {
+export const clientSecretError = res => {
   return res.status(401).json({
     message: 'You must provide a Client Secret.'
   });
 };
-
-module.exports = { serverError, clientIDError, clientSecretError };

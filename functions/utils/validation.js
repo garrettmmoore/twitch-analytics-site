@@ -1,5 +1,4 @@
-const errors = require('../utils/errors');
-const { clientIDError, clientSecretError } = errors;
+import { clientIDError, clientSecretError } from '../utils/errors.js';
 
 let validateCredentials = (client_id, client_secret, res) => {
   if (!client_id) return clientIDError(res);
@@ -7,4 +6,4 @@ let validateCredentials = (client_id, client_secret, res) => {
   if (!client_secret) return clientSecretError(res);
 };
 
-module.exports = validateCredentials;
+export default validateCredentials;

@@ -1,15 +1,17 @@
-const express = require('express');
-const { getTopGames, getGames } = require('../controllers/games');
-const router = express.Router();
+import { Router } from 'express';
+
+import { getGames, getTopGames } from '../controllers/games.js';
+
+const gamesRouter = Router();
 
 /**
  * Gets games sorted by number of current viewers on Twitch, most popular first.
  */
-router.get('/top/:count', getTopGames);
+gamesRouter.get('/top/:count', getTopGames);
 
 /**
  * Gets game information by game ID or name.
  */
-router.get('/:id', getGames);
+gamesRouter.get('/:id', getGames);
 
-module.exports = router;
+export default gamesRouter;

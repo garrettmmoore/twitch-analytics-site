@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+
 const config = {
   client_id: process.env.TWITCH_CLIENT_ID,
   client_secret: process.env.TWITCH_CLIENT_SECRET,
@@ -7,4 +10,4 @@ const config = {
   twitch_api_url: process.env.TWITCH_API_URL
 };
 
-module.exports = config;
+export default config;

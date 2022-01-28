@@ -1,17 +1,24 @@
-const express = require('express');
-const path = require('path');
-const morgan = require('morgan');
-const dotenv = require('dotenv');
-const cors = require('cors');
+import cors from 'cors';
+import express from 'express';
+import morgan from 'morgan';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Load environment variables
-dotenv.config({ path: `${__dirname}/.env` });
+import './config.js';
 
-const app = express();
-// enable rate-limiter for localhost
+import gamesRouter from './routes/games.js';
+import usersRouter from './routes/users.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const app = express();
+
+// Enable rate-limiter for localhost
 app.set('trust proxy', 1);
-// enable speed-limiter
+// Enable speed-limiter
 app.enable('trust proxy');
+
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -19,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 // Match routes
-app.use('/users', require('./routes/users'));
-app.use('/games', require('./routes/games'));
+app.use('/users', usersRouter);
+app.use('/games', gamesRouter);
 
 // Handle production
 if (process.env.NODE_ENV === 'production') {
@@ -38,5 +45,3 @@ if (process.env.NODE_ENV === 'production') {
 //     `Server running in ${process.env.NODE_ENV} mode on port http://localhost:${port}`
 //   );
 // });
-
-module.exports = { app };

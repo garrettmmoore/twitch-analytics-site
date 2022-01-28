@@ -1,45 +1,41 @@
 {
-  "name": "twitch-analytics-site",
-  "version": "1.0.0",
-  "description": "Analyze Twitch streamer and game analytics",
-  "main": "index.js",
-  "scripts": {
-    "start": "functions-framework --target=app --port=5000",
-    "server": "nodemon --exec \"functions-framework --target=app --port=5000\"",
-    "client": "npm run start --prefix \\.\\.\\/client\\",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/garrettmmoore/twitch-analytics-site/issues"
   },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^2.1.0",
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "express-rate-limit": "^6.2.0",
+    "express-slow-down": "^1.4.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.2.0"
+  },
+  "description": "Analyze Twitch streamer and game analytics",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "homepage": "https://github.com/garrettmmoore/twitch-analytics-site#readme",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "twitch-analytics-site",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/garrettmmoore/twitch-analytics-site.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/garrettmmoore/twitch-analytics-site/issues"
+  "scripts": {
+    "client": "npm run start --prefix \\.\\.\\/client\\",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon --exec \"npx functions-framework --target=app --port=5000\"",
+    "start": "npx functions-framework --target=app --port=5000"
   },
-  "homepage": "https://github.com/garrettmmoore/twitch-analytics-site#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.6",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.12.1",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
-  },
-  "dependencies": {
-    "@google-cloud/functions-framework": "^1.7.1",
-    "concurrently": "^5.3.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-rate-limit": "^5.1.3",
-    "express-slow-down": "^1.3.1",
-    "morgan": "^1.10.0",
-    "node-fetch": "^3.1.1"
-  }
+  "type": "module",
+  "version": "1.0.0"
 }

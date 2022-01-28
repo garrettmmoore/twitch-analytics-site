@@ -1,13 +1,19 @@
 {
   "name": "twitch-analytics-site",
+  "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "eslintConfig": {
+    "root": true
+  },
   "description": "Analyze Twitch streamer and game analytics",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "npm run server --prefix \\.\\/functions\\",
-    "client": "npm run start --prefix \\.\\/client\\",
-    "postinstall": "(cd client && npm install); (cd functions && npm install);"
+    "client": "npm run start --prefix \\.\\/client\\"
   },
   "repository": {
     "type": "git",
@@ -19,7 +25,14 @@
   },
   "homepage": "https://github.com/garrettmmoore/twitch-analytics-site#readme",
   "dependencies": {
-    "concurrently": "^5.3.0",
+    "concurrently": "^7.0.0",
     "react-query-devtools": "^2.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "prettier": "2.5.1"
   }
 }
