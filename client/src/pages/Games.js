@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import GamesForm from '../components/form/GamesForm';
-import TopGamesForm from '../components/form/TopGamesForm';
+import GamesForm from '../components/Form/GamesForm.js';
+import TopGamesForm from '../components/Form/TopGamesForm';
 import GamesResults from '../components/results/GamesResults';
 import useLocalStorage from '../hooks/useLocalStorage';
-import { Box, Divider, SimpleGrid } from '@chakra-ui/core';
+import { Box, Divider, SimpleGrid } from '@chakra-ui/react';
 
 const Games = props => {
   const [isError, setIsError] = useState(false);
@@ -14,7 +14,6 @@ const Games = props => {
     <Box className="Games" mx={8}>
       <SimpleGrid minChildWidth="500px" spacing="10" alignItems="end">
         <Box>
-          <h1>Select Games</h1>
           <GamesForm
             setGameData={setGameData}
             setIsError={setIsError}
@@ -23,7 +22,6 @@ const Games = props => {
           />
         </Box>
         <Box>
-          <h1>Search Games</h1>
           <TopGamesForm
             setGameData={setGameData}
             setIsError={setIsError}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Flex, Box } from '@chakra-ui/core';
-import ProfileForm from '../components/form/ProfileForm';
+import { Flex, Box } from '@chakra-ui/react';
+import ProfileForm from '../components/Form/ProfileForm';
 import ProfileResults from '../components/results/ProfileResults';
 import useLocalStorage from '../hooks/useLocalStorage';
 

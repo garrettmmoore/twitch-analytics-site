@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/core';
+import { Flex } from '@chakra-ui/react';
 import useDropdown from '../../hooks/useDropdown';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import fetchProfileData from '../../utils/fetchProfileData';

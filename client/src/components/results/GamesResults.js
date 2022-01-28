@@ -1,4 +1,4 @@
-import { AspectRatioBox, Box, Image, SimpleGrid } from '@chakra-ui/core';
+import { AspectRatio, Box, Image, SimpleGrid } from '@chakra-ui/react';
 
 const GamesResults = ({ gameData }) => {
   let parsedGameData = JSON.parse(gameData) || [];
@@ -8,13 +8,13 @@ const GamesResults = ({ gameData }) => {
       {parsedGameData.map(game => (
         <Box key={game.id}>
           <h1>{game.name}</h1>
-          <AspectRatioBox maxW="500px" ratio={4 / 5}>
+          <AspectRatio maxW="500px" ratio={4 / 5}>
             <Image
               objectFit="fill"
               src={game.box_art_url.replace('{width}x{height}', '400x500')}
               alt=""
             />
-          </AspectRatioBox>
+          </AspectRatio>
         </Box>
       ))}
     </SimpleGrid>

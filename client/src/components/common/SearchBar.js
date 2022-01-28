@@ -1,4 +1,4 @@
-import { Button, Flex, Input } from '@chakra-ui/core';
+import { Button, Flex, Input } from '@chakra-ui/react';
 
 const SearchBar = ({ name, value, onChange, label }) => (
   <label htmlFor="searchValue">
@@ -16,7 +16,7 @@ const SearchBar = ({ name, value, onChange, label }) => (
         mb={5}
         placeholder="Enter number"
       />
-      <Button type="submit" isDisabled={!value} size="md" padding="1em">
+      <Button type="submit" isDisabled={!value} w="md" padding="1em">
         {label}
       </Button>
     </Flex>

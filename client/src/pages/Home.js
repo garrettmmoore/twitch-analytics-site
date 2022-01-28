@@ -1,4 +1,4 @@
-import { Flex, Box } from '@chakra-ui/core';
+import { Flex, Box } from '@chakra-ui/react';
 const Home = () => {
   return (
     <Flex justifyContent="center">

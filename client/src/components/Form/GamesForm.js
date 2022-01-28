@@ -1,4 +1,4 @@
-import { Button, Flex } from '@chakra-ui/core';
+import { Button, Flex } from '@chakra-ui/react';
 import { useState } from 'react';
 import fetchGameData from '../../utils/fetchGameData';
 import GameTypesMenu from '../common/GameTypesMenu';
@@ -37,7 +37,7 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
     <form className="twitch-form" onSubmit={handleSubmit}>
       <Flex direction="row" align="flex-end" my={5}>
         <GameTypesMenu selected={selected} setSelected={setSelected} />
-        <Button type="submit" isDisabled={!selected} size="md">
+        <Button type="submit" isDisabled={!selected} w="md">
           Get Selected Games
         </Button>
       </Flex>

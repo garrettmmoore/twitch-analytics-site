@@ -22,7 +22,6 @@ const App = () => (
       </Games>
       <NotFound default />
     </Router>
-    <ReactQueryDevtools initialIsOpen />
   </>
 );
 

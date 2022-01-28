@@ -1,4 +1,4 @@
-import { Input, Flex, Button } from '@chakra-ui/core';
+import { Input, Flex, Button } from '@chakra-ui/react';
 
 const ProfileSearchBar = ({ query, setQuery, label }) => (
   <>

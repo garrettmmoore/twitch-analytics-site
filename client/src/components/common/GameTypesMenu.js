@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/react';
 import MultiSelect from 'react-multi-select-component';
 
 const options = [
