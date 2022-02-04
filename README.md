@@ -40,7 +40,9 @@ Fetch game data and user profile data.
    npm install
    ```
 
-4. Return to the root of the project, install dependencies, and start both the backend and frontend servers ->
+4. Copy the values from `.env.example` into a new `.env` file to set up your credentials
+
+5. Return to the root of the project, install dependencies, and start both the backend and frontend servers ->
    ```bash
    npm install
    ```
