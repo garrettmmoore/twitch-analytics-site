@@ -1,28 +1,22 @@
-import { Router } from '@reach/router';
-import { ReactQueryDevtools } from 'react-query-devtools';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/common/NavBar';
-import GameResults from './components/results/GamesResults';
-import Results from './components/results/ProfileResults';
 import Games from './pages/Games';
 import Home from './pages/Home';
-import NotFound from './pages/NotFound';
 import Profiles from './pages/Profiles';
+import NotFound from './pages/NotFound';
+
+import ErrorPage from './pages/ErrorPage';
+import { Layout } from './pages/Layout';
 
 const App = () => (
-  <>
-    <NavBar />
-    <Router>
-      <Home path="/"></Home>
-      <Profiles path="/profiles">
-        <Results path="option:query" />
-      </Profiles>
-      <Games path="/games">
-        <GameResults path="query" />
-      </Games>
-      <NotFound default />
-    </Router>
-  </>
+  <Routes>
+    <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
+      <Route index element={<Home />} />
+      <Route path="/profiles" element={<Profiles />} />
+      <Route path="/games" element={<Games />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  </Routes>
 );
 
 export default App;

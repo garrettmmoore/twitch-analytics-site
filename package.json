@@ -25,14 +25,13 @@
   },
   "homepage": "https://github.com/garrettmmoore/twitch-analytics-site#readme",
   "dependencies": {
-    "concurrently": "^7.0.0",
-    "react-query-devtools": "^2.6.3"
+    "concurrently": "^7.5.0"
   },
   "devDependencies": {
-    "eslint": "^8.7.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "prettier": "2.5.1"
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "prettier": "2.7.1"
   }
 }

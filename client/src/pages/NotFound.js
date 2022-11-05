@@ -1,9 +1,8 @@
-import { Link } from '@reach/router';
-
+import { Link } from 'react-router-dom';
 const NotFound = () => (
   <>
     <p>Sorry, this page is not valid!</p>
-    <Link path="/">Return to Home</Link>
+    <Link to="/">Return to Home</Link>
   </>
 );
 
