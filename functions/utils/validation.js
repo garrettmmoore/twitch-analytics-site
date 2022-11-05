@@ -6,4 +6,10 @@ let validateCredentials = (client_id, client_secret, res) => {
   if (!client_secret) return clientSecretError(res);
 };
 
-export default validateCredentials;
+let isValidPath = path => {
+  const pathValidationRegex = /^(\/?[a-z0-9]+)+$/;
+  console.log(pathValidationRegex.test(path)); // true
+  if (path) return true;
+};
+
+export { validateCredentials, isValidPath };

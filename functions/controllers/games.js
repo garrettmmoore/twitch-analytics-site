@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import setHeaders from '../auth/setHeaders.js';
 import config from '../config.js';
 import { serverError } from '../utils/errors.js';
-import validateCredentials from '../utils/validation.js';
+import { validateCredentials } from '../utils/validation.js';
 
 const { client_id, client_secret, twitch_api_url } = config;
 

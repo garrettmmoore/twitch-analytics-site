@@ -4,19 +4,19 @@
     "url": "https://github.com/garrettmmoore/twitch-analytics-site/issues"
   },
   "dependencies": {
-    "@google-cloud/functions-framework": "^2.1.0",
-    "concurrently": "^7.0.0",
+    "@google-cloud/functions-framework": "^2.1.1",
+    "concurrently": "^7.5.0",
     "cors": "^2.8.5",
-    "dotenv": "^14.3.2",
-    "express": "^4.17.2",
-    "express-rate-limit": "^6.2.0",
-    "express-slow-down": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.6.0",
+    "express-slow-down": "^1.5.0",
     "morgan": "^1.10.0",
-    "node-fetch": "^3.2.0"
+    "node-fetch": "^3.2.10"
   },
   "description": "Analyze Twitch streamer and game analytics",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": ">=16.0.0"
