@@ -23,7 +23,7 @@ const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
           setIsLoading
         );
 
-        navigate(`${option}/${query}`);
+        // navigate(`${option}/${query}`);
       }}
     >
       <Flex alignItems="center" justifyItems="space-between">

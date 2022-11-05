@@ -30,7 +30,7 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
       setIsLoading
     );
 
-    return navigate(`${params}`);
+    // return navigate(`${params}`);
   };
 
   return (
