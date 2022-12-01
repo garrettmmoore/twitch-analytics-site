@@ -1,10 +1,10 @@
-import { Flex } from '@chakra-ui/react';
+import { HStack } from '@chakra-ui/react';
 import useDropdown from '../../hooks/useDropdown';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import fetchProfileData from '../../utils/fetchProfileData';
 import ProfileSearchBar from '../common/ProfileSearchBar';
 
-const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
+const ProfileForm = ({ setData, setIsError, setIsLoading }) => {
   const options = ['login', 'extensions/user_id'];
   const [option, Dropdown] = useDropdown('login', 'login', options);
   const [query, setQuery] = useLocalStorage('queryStorage', '');
@@ -22,18 +22,16 @@ const ProfileForm = ({ setData, setIsError, setIsLoading, navigate }) => {
           setIsError,
           setIsLoading
         );
-
-        // navigate(`${option}/${query}`);
       }}
     >
-      <Flex alignItems="center" justifyItems="space-between">
+      <HStack alignItems="baseline" justifyContent="space-evenly">
         <Dropdown className="dropdown" />
         <ProfileSearchBar
           query={query}
           setQuery={setQuery}
           label={'Get Profile Data'}
         />
-      </Flex>
+      </HStack>
     </form>
   );
 };

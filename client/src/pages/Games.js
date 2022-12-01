@@ -5,7 +5,7 @@ import GamesResults from '../components/results/GamesResults';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { Box, Divider, SimpleGrid } from '@chakra-ui/react';
 
-const Games = props => {
+const Games = () => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [gameData, setGameData] = useLocalStorage('gameData', []);
@@ -18,7 +18,6 @@ const Games = props => {
             setGameData={setGameData}
             setIsError={setIsError}
             setIsLoading={setIsLoading}
-            navigate={props.navigate}
           />
         </Box>
         <Box>
@@ -26,7 +25,6 @@ const Games = props => {
             setGameData={setGameData}
             setIsError={setIsError}
             setIsLoading={setIsLoading}
-            navigate={props.navigate}
           />
         </Box>
       </SimpleGrid>

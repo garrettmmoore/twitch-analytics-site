@@ -3,7 +3,7 @@ import { useState } from 'react';
 import fetchGameData from '../../utils/fetchGameData';
 import GameTypesMenu from '../common/GameTypesMenu';
 
-const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
+const GamesForm = ({ setGameData, setIsError, setIsLoading }) => {
   const [selected, setSelected] = useState([]);
 
   const format = async selected => {
@@ -29,8 +29,6 @@ const GamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
       setIsError,
       setIsLoading
     );
-
-    // return navigate(`${params}`);
   };
 
   return (

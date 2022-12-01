@@ -4,7 +4,7 @@ import ProfileForm from '../components/Form/ProfileForm';
 import ProfileResults from '../components/results/ProfileResults';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-const Profiles = props => {
+const Profiles = () => {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useLocalStorage('dataStorage', []);
@@ -28,7 +28,6 @@ const Profiles = props => {
         setData={setData}
         setIsError={setIsError}
         setIsLoading={setIsLoading}
-        navigate={props.navigate}
       />
       {isError && <div className="errors">Something went wrong</div>}
       {isLoading ? (

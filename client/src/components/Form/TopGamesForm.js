@@ -2,7 +2,7 @@ import fetchGameData from '../../utils/fetchGameData';
 import SearchBar from '../common/SearchBar';
 import useForm from '../../hooks/useForm';
 
-const TopGamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
+const TopGamesForm = ({ setGameData, setIsError, setIsLoading }) => {
   const { form, reset, set } = useForm({
     numberTopGames: ''
   });
@@ -17,7 +17,7 @@ const TopGamesForm = ({ setGameData, setIsError, setIsLoading, navigate }) => {
       setIsLoading
     );
     reset();
-    navigate(`${form.numberTopGames}`);
+    // navigate(`${form.numberTopGames}`);
   };
 
   return (
