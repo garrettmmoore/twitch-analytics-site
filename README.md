@@ -1,6 +1,6 @@
 # Twitch Analytics Site
 
-Analyze Twitch streamer and game analytics.
+A web application to analyze Twitch stream and game analytics.
 
 Fetch game data and user profile data.
 
@@ -46,7 +46,7 @@ Fetch game data and user profile data.
    ```bash
    npm install
    ```
-   
+
    ```bash
    npm start
    ```
