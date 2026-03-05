@@ -4,7 +4,7 @@
     "url": "https://github.com/garrettmmoore/twitch-analytics-site/issues"
   },
   "dependencies": {
-    "@google-cloud/functions-framework": "^2.1.1",
+    "@google-cloud/functions-framework": "^5.0.1",
     "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
